@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>AI Session Confirmation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="session-box">
+            <h1>BCS17-B AI Session</h1>
+            <p>To participate the session, please confirm your ID in the below.</p>
+            <input id="input-id" type="text" placeholder="Enter your ID">
+            <button id="btn">Confirm ID</button>
+            <div> 
+                <p id="output"></p>
+            </div>
+        </div>
+     
+    </div>
+</body>
+<script>
+
+const idName = ["231010704", "20231010705", "20231010706", "20231010707", "20231010708", "20231010709", "202310107010"];
+const input = document.getElementById('input-id');
+const button = document.getElementById('btn');
+const output = document.getElementById('output');
+
+button.addEventListener("click", () => {
+    if(input.value != ''){
+        if(idName.includes(input.value)){
+            output.innerHTML = "you are eligble";
+        }else{
+            output.innerHTML = "you are not eligble";
+        }
+    }else{
+        output.innerHTML = "please fill the input";
+        output.style.color = "red";
+    }
+})
+
+</script>
+</html>
